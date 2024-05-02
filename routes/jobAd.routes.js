@@ -1,7 +1,7 @@
 const express = require('express')
 const jobController = require('../controllers/job.controller')
 
-const applicantRouter = require('./../routes/applicant.routes')
+const applicantRouter = require('./application.routes')
 const router = express.Router()
 
 router.use('/:jobId/applications', applicantRouter)
