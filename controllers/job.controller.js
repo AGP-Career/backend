@@ -1,4 +1,4 @@
-const JobAd = require('../models/job.ad')
+const JobAd = require('../models/job.Ad')
 const catchAsync = require('./../utils/catch.async')
 const appError = require('./../utils/app.error')
 
