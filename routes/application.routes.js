@@ -1,5 +1,5 @@
 const express = require('express')
-const applicationController = require('../controllers/application.controller')
+const applicationController = require('../controllers/applicationController')
 const router = express.Router({ mergeParams: true })
 
 router
@@ -10,9 +10,9 @@ router
   .get(applicationController.getTotalApplicationStatus)
 
 // update applicationstatus
-router
-  .route('/:id/update-application-status')
-  .patch(applicationController.updateApplicationStatus)
+// router
+//   .route('/:id/update-application')
+//   .patch(applicationController.updateApplication)
 
 router
   .route('/')
