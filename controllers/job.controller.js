@@ -1,6 +1,6 @@
 const JobAd = require('../models/job.Ad')
-const catchAsync = require('./../utils/catch.async')
-const appError = require('./../utils/app.error')
+const catchAsync = require('../utils/catchAsync')
+const appError = require('../utils/appError')
 
 exports.getAllJobs = catchAsync(async (req, res, next) => {
   // 1a)FILTERING
