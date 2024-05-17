@@ -1,10 +1,17 @@
 const express = require('express')
-const jobController = require('../controllers/job.controller')
+const jobController = require('../controllers/jobController')
 
-const applicantRouter = require('./application.routes')
+const applicationRouter = require('./application.routes')
+const verifyToken = require('../middleware/auth.middleware')
+const authController = require('./../controllers/auth.controller')
 const router = express.Router()
 
-router.use('/:jobId/applications', applicantRouter)
+// router.use(verifyToken) // this will protect all the middlewares under it from users that are not logged in
+
+router.route('/get-total-job-count').get(jobController.getTotalJobs)
+router.route('/get-total-job-type').get(jobController.getTotalJobsTypes)
+
+router.use('/:jobId/applications', applicationRouter)
 
 router.route('/').post(jobController.createJob).get(jobController.getAllJobs)
 router
